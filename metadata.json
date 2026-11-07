@@ -1,0 +1,6 @@
+{
+  "name": "ClassZ",
+  "description": "16-bit Halloween MOBA Action RPG featuring 5 hero classes, Q/W/E/R ability kits, League of Legends PC controls, automatic Mobile MOBA radial UI, and a 6-slot Cursed Item system.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

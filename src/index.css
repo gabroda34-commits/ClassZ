@@ -1,0 +1,181 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Silkscreen', monospace;
+    --font-sans: 'Pixelify Sans', monospace;
+    --font-mono: 'Silkscreen', monospace;
+  }
+
+  * {
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-user-select: none;
+    border-radius: 0px !important;
+    font-smooth: never;
+    -webkit-font-smoothing: none;
+  }
+
+  html,
+  body,
+  #root {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #0D0E0C;
+    color: #F8FAFC;
+    font-family: var(--font-sans);
+    letter-spacing: 0.02em;
+  }
+
+  canvas,
+  img {
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+  }
+
+  /* Custom 16-Bit Industrial Pixel Scrollbars */
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #121310;
+    border: 2px solid #090A08;
+    box-shadow: inset 2px 2px 0px #090A08;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #585F4C;
+    border: 2px solid #090A08;
+    box-shadow: inset 2px 2px 0px #838C72, inset -2px -2px 0px #33382C;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #6B735D;
+  }
+
+  ::-webkit-scrollbar-corner {
+    background: #121310;
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Force all utility font classes across menus & HUD to use Pixel-Art Typography */
+.font-\[\'Oswald\'\,sans-serif\],
+.font-display,
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Silkscreen', monospace !important;
+  text-shadow: 2px 2px 0px #060705, -1px -1px 0px #060705, 1px -1px 0px #060705, -1px 1px 0px #060705;
+  letter-spacing: 0.03em;
+}
+
+.font-\[\'Plus_Jakarta_Sans\'\,sans-serif\],
+.font-sans-ui {
+  font-family: 'Pixelify Sans', monospace !important;
+  text-shadow: 1px 1px 0px #060705;
+}
+
+.font-\[\'JetBrains_Mono\'\,monospace\],
+.font-mono,
+.font-mono-tabular {
+  font-family: 'Pixelify Sans', monospace !important;
+  font-variant-numeric: tabular-nums;
+  text-shadow: 1px 1px 0px #060705;
+}
+
+/* Industrial Pixel-Art Panel & Button Bevels matching the Home Screen Menu */
+.pixel-panel {
+  background-color: #1B1C18 !important;
+  border: 3px solid #090A08 !important;
+  box-shadow:
+    inset 3px 3px 0px #575C4E,
+    inset -3px -3px 0px #2B2E26,
+    0 0 0 2px #4A4E42,
+    6px 6px 0px rgba(0, 0, 0, 0.85) !important;
+}
+
+.pixel-subpanel {
+  background-color: #121310 !important;
+  border: 2px solid #090A08 !important;
+  box-shadow:
+    inset 2px 2px 0px #080907,
+    inset -2px -2px 0px #2F3329,
+    0 0 0 1px #3E4336 !important;
+}
+
+.pixel-card {
+  background-color: #1F211B !important;
+  border: 2px solid #090A08 !important;
+  box-shadow:
+    inset 2px 2px 0px #4C5242,
+    inset -2px -2px 0px #121410,
+    3px 3px 0px #070806 !important;
+}
+
+.pixel-btn-olive {
+  background-color: #545B49 !important;
+  border: 2px solid #090A08 !important;
+  color: #F8FAFC !important;
+  font-family: 'Silkscreen', monospace !important;
+  text-shadow: 2px 2px 0px #090A08, -1px -1px 0px #090A08, 1px -1px 0px #090A08, -1px 1px 0px #090A08 !important;
+  box-shadow:
+    inset 3px 3px 0px #7F886F,
+    inset -3px -3px 0px #31362A,
+    3px 3px 0px #070806 !important;
+  transition: transform 80ms steps(2), filter 80ms steps(2) !important;
+}
+
+.pixel-btn-olive:hover:not(:disabled) {
+  background-color: #626A55 !important;
+  filter: brightness(1.08);
+}
+
+.pixel-btn-olive:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow:
+    inset 2px 2px 0px #31362A,
+    inset -2px -2px 0px #7F886F,
+    1px 1px 0px #070806 !important;
+}
+
+.pixel-btn-red-active {
+  background-color: #5C6350 !important;
+  border: 2px solid #FF2A4B !important;
+  color: #FFFFFF !important;
+  font-family: 'Silkscreen', monospace !important;
+  text-shadow: 2px 2px 0px #090A08, -1px -1px 0px #090A08, 1px -1px 0px #090A08, -1px 1px 0px #090A08 !important;
+  box-shadow:
+    inset 3px 3px 0px #8B947A,
+    inset -3px -3px 0px #33382B,
+    0 0 0 2px #090A08,
+    0 0 14px rgba(255, 42, 75, 0.75),
+    inset 0 0 8px rgba(255, 42, 75, 0.35) !important;
+}
+
+.pixel-hazard-stripe {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    #D69A28 0px,
+    #D69A28 12px,
+    #181512 12px,
+    #181512 24px
+  );
+  border-top: 2px solid #090A08;
+  border-bottom: 2px solid #090A08;
+  box-shadow: inset 0 2px 0 rgba(255, 230, 140, 0.35), inset 0 -2px 0 rgba(0, 0, 0, 0.65);
+}
+
