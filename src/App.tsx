@@ -906,12 +906,12 @@ export default function App() {
               <span className="w-3 h-1 bg-[#FF2A4B] shadow-[0_0_6px_#FF2A4B] absolute top-2.5 right-3" />
 
               <div>
-                <div className="mb-2 pr-6">
-                  <div className="font-['Oswald',sans-serif] text-xs sm:text-sm font-bold uppercase text-white tracking-wider">
+                <div className="mb-2.5 pr-6">
+                  <div className="font-['Oswald',sans-serif] text-sm sm:text-base font-bold uppercase text-white tracking-wider">
                     1. SELECT HERO ARCHETYPE
                   </div>
-                  <div className="text-[10px] text-slate-300 mt-0.5">
-                    Unique Signature Archetype: [Q][W][E][R] (Melee - Ranged - Tank - Healer - Mage)
+                  <div className="text-xs text-slate-200 mt-0.5 font-medium">
+                    Unique Signature Archetype: [Q][W][E][R] (Melee · Ranged · Tank · Healer · Mage)
                   </div>
                 </div>
 
@@ -932,27 +932,27 @@ export default function App() {
                       >
                         <div className="w-full">
                           <div
-                            className="font-['Oswald',sans-serif] text-[9px] sm:text-[10px] font-bold uppercase leading-tight break-words"
+                            className="font-['Oswald',sans-serif] text-[11px] sm:text-xs font-bold uppercase leading-tight"
                             style={{ color: active ? '#86EFAC' : op.color }}
                           >
                             {op.name}
                           </div>
-                          <div className="text-[8px] font-mono uppercase text-amber-300/90 mt-0.5">
+                          <div className="text-[10px] font-mono font-semibold uppercase text-amber-300 mt-0.5">
                             {op.archetype.replace(' USER', '')}
                           </div>
                         </div>
 
                         {/* Full-Body Pixel Art Hero Illustration */}
-                        <div className="my-1.5 relative flex items-center justify-center w-full py-1 bg-[#0D0F0C] border border-[#2C3026]">
-                          <FullBodyHeroPixelArt classId={op.id} color={op.color} size={46} />
+                        <div className="my-1.5 relative flex items-center justify-center w-full py-1.5 bg-[#0D0F0C] border border-[#2C3026]">
+                          <FullBodyHeroPixelArt classId={op.id} color={op.color} size={52} />
                           {active && (
-                            <span className="absolute -bottom-1.5 px-1.5 py-0.2 bg-[#16A34A] border border-[#86EFAC] text-[8px] font-mono font-bold uppercase text-white leading-none">
+                            <span className="absolute -bottom-1.5 px-1.5 py-0.5 bg-[#16A34A] border border-[#86EFAC] text-[9px] font-mono font-bold uppercase text-white leading-none">
                               active
                             </span>
                           )}
                         </div>
 
-                        <div className="w-full pt-1 border-t border-[#2E3227] text-[9px] text-slate-200 leading-tight truncate">
+                        <div className="w-full pt-1 border-t border-[#2E3227] text-[10px] font-medium text-slate-100 leading-tight truncate">
                           {op.signatureWeaponName}
                         </div>
                       </button>
@@ -964,13 +964,13 @@ export default function App() {
                 <div className="mt-3 bg-[#1A1D17] border-2 border-[#393D32] p-3 space-y-2.5">
                   <div className="flex flex-wrap items-center justify-between gap-2">
                     <div className="flex-1 min-w-[180px]">
-                      <div className="text-[10px] font-mono uppercase text-[#4ADE80] font-bold tracking-wider">
+                      <div className="text-[11px] font-mono uppercase text-[#4ADE80] font-bold tracking-wider">
                         UNLIMITED SIGNATURE ATTACK
                       </div>
-                      <div className="font-bold text-sm text-emerald-300 mt-0.5">
+                      <div className="font-['Oswald',sans-serif] font-bold text-base uppercase text-white mt-0.5">
                         {currentOpClass.signatureWeaponName}
                       </div>
-                      <p className="text-xs text-slate-200 leading-snug mt-0.5">
+                      <p className="text-xs text-slate-100 leading-relaxed mt-0.5">
                         {currentOpClass.signatureWeaponDesc}
                       </p>
                     </div>
@@ -982,14 +982,14 @@ export default function App() {
                         setItemCategoryFilter('abilities');
                         setShowArmoryModal(true);
                       }}
-                      className="px-3 py-2 bg-[#22C55E] hover:bg-[#4ADE80] border-2 border-[#86EFAC] shadow-[0_3px_0_#064E3B,0_0_12px_rgba(34,197,94,0.45)] text-[#051209] font-['Oswald',sans-serif] text-xs font-bold uppercase tracking-wider cursor-pointer shrink-0"
+                      className="px-3.5 py-2 bg-[#22C55E] hover:bg-[#4ADE80] border-2 border-[#86EFAC] shadow-[0_3px_0_#064E3B,0_0_12px_rgba(34,197,94,0.45)] text-[#04140A] font-['Oswald',sans-serif] text-xs sm:text-sm font-bold uppercase tracking-wider cursor-pointer shrink-0"
                     >
                       UPGRADE SKILLS
                     </button>
                   </div>
 
                   {/* 2x2 Grid of [Q] [W] [E] [R] Hero Skills */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                     {currentOpClass.abilities.map((ab, idx) => {
                       const lv = profile.heroAbilityLevels[profile.selectedClass]?.[idx] || 1;
                       const effCd = ab.isPassive
@@ -1004,19 +1004,19 @@ export default function App() {
                           <div>
                             <div className="flex items-center justify-between gap-1 flex-wrap">
                               <span
-                                className="px-1.5 py-0.5 text-[9px] font-mono font-bold uppercase border"
+                                className="px-1.5 py-0.5 text-[10px] font-mono font-bold uppercase border"
                                 style={{ borderColor: ab.color, color: ab.color, backgroundColor: '#090A08' }}
                               >
                                 [{ab.slot}] {ab.isPassive ? 'INNATE PASSIVE' : `${effCd}S COOLDOWN`}
                               </span>
-                              <span className="text-[9px] font-mono text-amber-300 font-bold">
+                              <span className="text-[10px] font-mono text-amber-300 font-bold">
                                 LV.{lv}/5 (+{lv * 18}% PWR)
                               </span>
                             </div>
-                            <div className="font-['Oswald',sans-serif] text-xs font-bold uppercase text-white mt-1.5">
+                            <div className="font-['Oswald',sans-serif] text-sm font-bold uppercase text-white mt-1.5 tracking-wide">
                               {ab.name}
                             </div>
-                            <p className="text-[11px] text-slate-200 mt-1 leading-snug break-words">
+                            <p className="text-xs text-slate-100 mt-1 leading-relaxed break-words">
                               {ab.description}
                             </p>
                           </div>
@@ -1223,10 +1223,10 @@ export default function App() {
               <div className="bg-[#141612] border-2 border-[#4A4F3E] p-3 relative shadow-[inset_0_0_0_2px_#0A0B09] space-y-2.5">
                 <span className="w-3 h-1 bg-[#FF2A4B] shadow-[0_0_6px_#FF2A4B] absolute top-2.5 right-3" />
                 <div>
-                  <div className="text-[10px] font-mono uppercase tracking-widest text-slate-300">
+                  <div className="text-[11px] font-mono uppercase tracking-widest text-slate-300 font-semibold">
                     PASSIVE RELICS
                   </div>
-                  <div className="font-['Oswald',sans-serif] text-sm sm:text-base font-bold uppercase text-white mt-0.5">
+                  <div className="font-['Oswald',sans-serif] text-base font-bold uppercase text-white mt-0.5 whitespace-nowrap">
                     EQUIPPED ARSENAL ({profile.equippedItems.length} / 6)
                   </div>
                 </div>
@@ -1254,13 +1254,13 @@ export default function App() {
                             <div className="flex-1 flex items-center justify-center">
                               <ItemPixelIcon itemId={itemId} color={def.color} size={22} />
                             </div>
-                            <span className="font-mono text-[7px] font-bold uppercase text-white truncate max-w-full leading-none">
+                            <span className="font-mono text-[9px] font-bold uppercase text-white truncate max-w-full leading-none">
                               {def.shortName.slice(0, 5)}
                             </span>
                           </>
                         ) : (
                           <div className="w-full h-full flex items-center justify-center">
-                            <span className="text-[7px] font-mono text-slate-500 uppercase">EMPTY</span>
+                            <span className="text-[9px] font-mono text-slate-400 uppercase font-semibold">EMPTY</span>
                           </div>
                         )}
                       </button>
@@ -1274,7 +1274,7 @@ export default function App() {
                     setShowSurvivalModal(false);
                     setShowArmoryModal(true);
                   }}
-                  className="w-full py-2.5 pixel-btn-olive font-['Oswald',sans-serif] text-xs font-bold uppercase tracking-wider cursor-pointer"
+                  className="w-full py-2.5 pixel-btn-olive font-['Oswald',sans-serif] text-xs sm:text-sm font-bold uppercase tracking-wider cursor-pointer"
                 >
                   OPEN ARSENAL
                 </button>
@@ -1284,10 +1284,10 @@ export default function App() {
               <div className="bg-[#141612] border-2 border-[#4A4F3E] p-3 relative shadow-[inset_0_0_0_2px_#0A0B09] flex-1 flex flex-col justify-between space-y-2">
                 <span className="w-3 h-1 bg-[#FF2A4B] shadow-[0_0_6px_#FF2A4B] absolute top-2.5 right-3" />
                 <div>
-                  <div className="text-[10px] font-mono uppercase tracking-wider text-red-400 font-bold">
+                  <div className="text-xs font-mono uppercase tracking-wider text-red-400 font-bold">
                     TWO-TIER BOSS THREAT PROTOCOL
                   </div>
-                  <p className="text-[11px] text-slate-200 leading-snug mt-1">
+                  <p className="text-xs text-slate-100 leading-relaxed mt-1">
                     <span className="text-amber-300 font-bold">Every Wave End:</span> Armored Undead Warden Boss spawns at the end of every wave.
                   </p>
                 </div>
@@ -1299,7 +1299,7 @@ export default function App() {
                       className="bg-[#1B1E18] border-2 border-[#32362B] px-2.5 py-2 flex items-center justify-between gap-2"
                     >
                       <span
-                        className="font-['Oswald',sans-serif] text-[10px] font-bold uppercase leading-tight"
+                        className="font-['Oswald',sans-serif] text-xs font-bold uppercase leading-tight"
                         style={{ color: cfg.color }}
                       >
                         WAVE {(i + 1) * 5}: {cfg.name}
@@ -4466,7 +4466,7 @@ function ClassZHomeScene({
 
   useEffect(() => {
     const img = new Image();
-    img.src = '/assets/aistudio/image_4663bf94.png';
+    img.src = '/assets/aistudio/classz_home_hd.jpg';
     img.onload = () => {
       bgImgRef.current = img;
       setImgLoaded(true);
@@ -4480,38 +4480,83 @@ function ClassZHomeScene({
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
+    // Render at native 2K QHD (2048x1144, exact 2x coordinate space of 1024x572)
+    const S = 2;
+    const sx = img.naturalWidth / 1024;
+    const sy = img.naturalHeight / 572;
+
+    const copyRegion = (
+      srcX: number,
+      srcY: number,
+      srcW: number,
+      srcH: number,
+      dstX: number,
+      dstY: number,
+      dstW = srcW,
+      dstH = srcH
+    ) => {
+      ctx.drawImage(
+        img,
+        srcX * sx,
+        srcY * sy,
+        srcW * sx,
+        srcH * sy,
+        dstX * S,
+        dstY * S,
+        dstW * S,
+        dstH * S
+      );
+    };
+
     let rafId = 0;
     const renderFrame = (now: number) => {
-      ctx.imageSmoothingEnabled = false;
-      ctx.clearRect(0, 0, 1024, 572);
-      ctx.drawImage(img, 0, 0, 1024, 572);
+      ctx.imageSmoothingEnabled = true;
+      ctx.imageSmoothingQuality = 'high';
+      ctx.clearRect(0, 0, 1024 * S, 572 * S);
+      ctx.drawImage(img, 0, 0, 1024 * S, 572 * S);
 
       // If a button other than START SURVIVAL (index 0) is hovered/selected,
-      // dynamically move the red neon frame + pixel chainsaw selector to activeMenuIdx
+      // seamlessly deactivate Button 0's red glow and draw a crisp HD Red Neon Glow + chainsaw on activeMenuIdx
       if (activeMenuIdx !== 0) {
-        // 1. Replace Button 0's outer red glow with Button 1's clean olive-grey border & dark panel
-        ctx.drawImage(img, 773, 261, 210, 46, 773, 215, 210, 46);
-        // 2. Erase the chainsaw tip sticking out on the right of Button 0 using the clean frame slice below it
-        ctx.drawImage(img, 983, 261, 33, 46, 983, 215, 33, 46);
-        // 3. Tile a clean olive-grey face strip across Button 0's interior before stamping its text back
+        // 1. Replace Button 0's button box only (x=781..967, y=215..260) using Button 1's clean olive-grey box
+        copyRegion(781, 261, 186, 45, 781, 215);
+        // 2. Erase only the small 19px-tall chainsaw tip (x=967..1000, y=228..247) using the clean rivet-free metal bar slice at y=250
+        copyRegion(967, 250, 33, 20, 967, 228);
+        // 3. Tile clean olive-grey button face across Button 0's interior before restoring its text
         for (let dx = 800; dx < 952; dx += 20) {
           const w = Math.min(20, 952 - dx);
-          ctx.drawImage(img, 801, 273, w, 20, dx, 227, w, 20);
+          copyRegion(801, 273, w, 20, dx, 227, w, 20);
         }
-        // 4. Stamp Button 0's "START SURVIVAL" pixel text & shadow back onto the clean olive-grey plate
-        ctx.drawImage(img, 801, 228, 152, 17, 801, 228, 152, 17);
+        // 4. Stamp Button 0's crisp "START SURVIVAL" label back onto the clean olive-grey plate
+        copyRegion(801, 228, 152, 17, 801, 228);
 
-        // 5. Stamp the Red Neon Glow Frame + Chainsaw selector from Button 0 onto activeMenuIdx
-        const targetY = 221 + activeMenuIdx * 46;
-        ctx.drawImage(img, 775, 211, 238, 52, 775, 211 + activeMenuIdx * 46, 238, 52);
+        // 5. Draw a razor-sharp 2K HD Red Neon Glow border directly around activeMenuIdx's button box
+        // (Zero rectangular background stamping -> preserves metal rivets and zombie hands!)
+        const btnX = 787 * S;
+        const btnY = (220 + activeMenuIdx * 46) * S;
+        const btnW = 176 * S;
+        const btnH = 35 * S;
 
-        // 6. Restore activeMenuIdx's own olive-grey interior face & button label
-        ctx.drawImage(img, 800, targetY + 5, 153, 24, 800, targetY + 5, 153, 24);
+        ctx.save();
+        ctx.shadowColor = 'rgba(255, 38, 72, 0.95)';
+        ctx.shadowBlur = 18;
+        ctx.strokeStyle = '#FF2A4B';
+        ctx.lineWidth = 4.5;
+        ctx.strokeRect(btnX, btnY, btnW, btnH);
+
+        ctx.shadowBlur = 6;
+        ctx.strokeStyle = '#FF99AA';
+        ctx.lineWidth = 1.5;
+        ctx.strokeRect(btnX + 2, btnY + 2, btnW - 4, btnH - 4);
+        ctx.restore();
+
+        // 6. Stamp ONLY the tight chainsaw selector sprite (x=948..997, y=229..245) onto the right edge of activeMenuIdx
+        copyRegion(948, 229, 49, 17, 948, 229 + activeMenuIdx * 46);
 
         // 7. Keep the two zombie hands gripping the bottom edge when QUIT (index 5) is highlighted
         if (activeMenuIdx === 5) {
-          ctx.drawImage(img, 812, 473, 27, 40, 812, 473, 27, 40);
-          ctx.drawImage(img, 930, 467, 29, 46, 930, 467, 29, 46);
+          copyRegion(812, 473, 27, 40, 812, 473);
+          copyRegion(930, 467, 29, 46, 930, 467);
         }
       }
 
@@ -4522,21 +4567,21 @@ function ClassZHomeScene({
       ctx.globalCompositeOperation = 'screen';
 
       // Left Red Siren Beacon (x=799, y=161)
-      const redGrad = ctx.createRadialGradient(799, 161, 2, 799, 161, 28);
+      const redGrad = ctx.createRadialGradient(799 * S, 161 * S, 2 * S, 799 * S, 161 * S, 28 * S);
       redGrad.addColorStop(0, `rgba(255, 60, 60, ${0.42 * redPulse})`);
       redGrad.addColorStop(1, 'rgba(255, 60, 60, 0)');
       ctx.fillStyle = redGrad;
       ctx.beginPath();
-      ctx.arc(799, 161, 28, 0, Math.PI * 2);
+      ctx.arc(799 * S, 161 * S, 28 * S, 0, Math.PI * 2);
       ctx.fill();
 
       // Right Amber Siren Beacon (x=953, y=161)
-      const amberGrad = ctx.createRadialGradient(953, 161, 2, 953, 161, 28);
+      const amberGrad = ctx.createRadialGradient(953 * S, 161 * S, 2 * S, 953 * S, 161 * S, 28 * S);
       amberGrad.addColorStop(0, `rgba(255, 190, 40, ${0.42 * amberPulse})`);
       amberGrad.addColorStop(1, 'rgba(255, 190, 40, 0)');
       ctx.fillStyle = amberGrad;
       ctx.beginPath();
-      ctx.arc(953, 161, 28, 0, Math.PI * 2);
+      ctx.arc(953 * S, 161 * S, 28 * S, 0, Math.PI * 2);
       ctx.fill();
 
       ctx.restore();
@@ -4549,83 +4594,63 @@ function ClassZHomeScene({
 
   return (
     <div className="absolute inset-0 z-20 bg-[#08090F] flex items-center justify-center overflow-hidden select-none">
-      {/* Atmospheric blurred fill for ultrawide or tall screens */}
-      <img
-        src="/assets/aistudio/image_4663bf94.png"
-        alt=""
-        aria-hidden="true"
-        referrerPolicy="no-referrer"
-        className="absolute inset-0 w-full h-full object-cover blur-md brightness-50 scale-105 pointer-events-none"
-      />
+      {/* Full-Viewport High-Definition 2K Main Design Stage (No blurry sidebars) */}
+      <div className="relative w-full h-full">
+        {/* Fallback static HD image until canvas is ready */}
+        <img
+          src="/assets/aistudio/classz_home_hd.jpg"
+          alt="ClassZ Main Menu"
+          referrerPolicy="no-referrer"
+          className="w-full h-full block pointer-events-none"
+        />
 
-      {/* Interactive 1024x572 Main Design Stage */}
-      <div className="relative w-full h-full flex items-center justify-center">
-        <div
-          className="relative w-full h-full"
+        {/* Dynamic 2K High-Definition Canvas */}
+        <canvas
+          ref={sceneCanvasRef}
+          width={2048}
+          height={1144}
+          className="absolute inset-0 w-full h-full block pointer-events-none"
+        />
+
+        {/* 6 Interactive Industrial Menu Button Hitboxes */}
+        {HOME_MENU_ITEMS.map((item) => {
+          const topPct = ((219 + item.index * 46) / 572) * 100;
+          const heightPct = (38 / 572) * 100;
+          const leftPct = (786 / 1024) * 100;
+          const widthPct = (218 / 1024) * 100;
+          return (
+            <button
+              key={item.label}
+              type="button"
+              aria-label={item.label}
+              onMouseEnter={() => onHoverMenu(item.index)}
+              onFocus={() => onHoverMenu(item.index)}
+              onClick={() => onSelectMenu(item.index)}
+              style={{
+                top: `${topPct}%`,
+                height: `${heightPct}%`,
+                left: `${leftPct}%`,
+                width: `${widthPct}%`
+              }}
+              className="absolute z-10 bg-transparent cursor-pointer focus:outline-none"
+            />
+          );
+        })}
+
+        {/* Interactive Bottom "PRESS [START] TO DEFEND" Button Hitbox */}
+        <button
+          type="button"
+          aria-label="Press Start to Defend"
+          onClick={onPressStartPrompt}
           style={{
-            maxWidth: 'calc(100dvh * (1024 / 572))',
-            maxHeight: 'calc(100vw * (572 / 1024))',
-            aspectRatio: '1024 / 572'
+            left: '36.5%',
+            width: '28%',
+            top: '93.5%',
+            height: '5.5%'
           }}
-        >
-          {/* Fallback static image until canvas is ready */}
-          <img
-            src="/assets/aistudio/image_4663bf94.png"
-            alt="ClassZ Main Menu"
-            referrerPolicy="no-referrer"
-            className="w-full h-full block pointer-events-none"
-            style={{ imageRendering: 'pixelated' }}
-          />
-
-          {/* Dynamic Pixel-Art Canvas moving the red neon glow + chainsaw selector */}
-          <canvas
-            ref={sceneCanvasRef}
-            width={1024}
-            height={572}
-            className="absolute inset-0 w-full h-full block pointer-events-none"
-            style={{ imageRendering: 'pixelated' }}
-          />
-
-          {/* 6 Interactive Industrial Menu Button Hitboxes */}
-          {HOME_MENU_ITEMS.map((item) => {
-            const topPct = ((219 + item.index * 46) / 572) * 100;
-            const heightPct = (38 / 572) * 100;
-            const leftPct = (786 / 1024) * 100;
-            const widthPct = (218 / 1024) * 100;
-            return (
-              <button
-                key={item.label}
-                type="button"
-                aria-label={item.label}
-                onMouseEnter={() => onHoverMenu(item.index)}
-                onFocus={() => onHoverMenu(item.index)}
-                onClick={() => onSelectMenu(item.index)}
-                style={{
-                  top: `${topPct}%`,
-                  height: `${heightPct}%`,
-                  left: `${leftPct}%`,
-                  width: `${widthPct}%`
-                }}
-                className="absolute z-10 bg-transparent cursor-pointer focus:outline-none"
-              />
-            );
-          })}
-
-          {/* Interactive Bottom "PRESS [START] TO DEFEND" Button Hitbox */}
-          <button
-            type="button"
-            aria-label="Press Start to Defend"
-            onClick={onPressStartPrompt}
-            style={{
-              left: '36.5%',
-              width: '28%',
-              top: '93.5%',
-              height: '5.5%'
-            }}
-            className="absolute z-10 bg-transparent hover:bg-white/5 border border-transparent hover:border-emerald-400/50 transition cursor-pointer focus:outline-none"
-            title="Click or press [Enter] to Start Survival"
-          />
-        </div>
+          className="absolute z-10 bg-transparent hover:bg-white/5 border border-transparent hover:border-emerald-400/50 transition cursor-pointer focus:outline-none"
+          title="Click or press [Enter] to Start Survival"
+        />
       </div>
     </div>
   );

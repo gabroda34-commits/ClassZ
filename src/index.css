@@ -2,9 +2,9 @@
 
 @layer base {
   :root {
-    --font-display: 'Silkscreen', monospace;
-    --font-sans: 'Pixelify Sans', monospace;
-    --font-mono: 'Silkscreen', monospace;
+    --font-display: 'Oswald', sans-serif;
+    --font-sans: 'Plus Jakarta Sans', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
   }
 
   * {
@@ -12,8 +12,9 @@
     user-select: none;
     -webkit-user-select: none;
     border-radius: 0px !important;
-    font-smooth: never;
-    -webkit-font-smoothing: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 
   html,
@@ -27,13 +28,7 @@
     background-color: #0D0E0C;
     color: #F8FAFC;
     font-family: var(--font-sans);
-    letter-spacing: 0.02em;
-  }
-
-  canvas,
-  img {
-    image-rendering: pixelated;
-    image-rendering: crisp-edges;
+    letter-spacing: 0.01em;
   }
 
   /* Custom 16-Bit Industrial Pixel Scrollbars */
@@ -71,30 +66,27 @@
   scrollbar-width: none;
 }
 
-/* Force all utility font classes across menus & HUD to use Pixel-Art Typography */
+/* Crisp Tactical Typography matching the reference UI screenshots */
 .font-\[\'Oswald\'\,sans-serif\],
 .font-display,
 h1,
 h2,
 h3,
 h4 {
-  font-family: 'Silkscreen', monospace !important;
-  text-shadow: 2px 2px 0px #060705, -1px -1px 0px #060705, 1px -1px 0px #060705, -1px 1px 0px #060705;
-  letter-spacing: 0.03em;
+  font-family: 'Oswald', sans-serif !important;
+  letter-spacing: 0.04em;
 }
 
 .font-\[\'Plus_Jakarta_Sans\'\,sans-serif\],
 .font-sans-ui {
-  font-family: 'Pixelify Sans', monospace !important;
-  text-shadow: 1px 1px 0px #060705;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
 }
 
 .font-\[\'JetBrains_Mono\'\,monospace\],
 .font-mono,
 .font-mono-tabular {
-  font-family: 'Pixelify Sans', monospace !important;
+  font-family: 'JetBrains Mono', monospace !important;
   font-variant-numeric: tabular-nums;
-  text-shadow: 1px 1px 0px #060705;
 }
 
 /* Industrial Pixel-Art Panel & Button Bevels matching the Home Screen Menu */
@@ -130,8 +122,9 @@ h4 {
   background-color: #545B49 !important;
   border: 2px solid #090A08 !important;
   color: #F8FAFC !important;
-  font-family: 'Silkscreen', monospace !important;
-  text-shadow: 2px 2px 0px #090A08, -1px -1px 0px #090A08, 1px -1px 0px #090A08, -1px 1px 0px #090A08 !important;
+  font-family: 'Oswald', sans-serif !important;
+  letter-spacing: 0.05em;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.85) !important;
   box-shadow:
     inset 3px 3px 0px #7F886F,
     inset -3px -3px 0px #31362A,
@@ -156,8 +149,9 @@ h4 {
   background-color: #5C6350 !important;
   border: 2px solid #FF2A4B !important;
   color: #FFFFFF !important;
-  font-family: 'Silkscreen', monospace !important;
-  text-shadow: 2px 2px 0px #090A08, -1px -1px 0px #090A08, 1px -1px 0px #090A08, -1px 1px 0px #090A08 !important;
+  font-family: 'Oswald', sans-serif !important;
+  letter-spacing: 0.05em;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.9) !important;
   box-shadow:
     inset 3px 3px 0px #8B947A,
     inset -3px -3px 0px #33382B,
